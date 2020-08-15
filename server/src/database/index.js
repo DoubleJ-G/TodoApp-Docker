@@ -50,9 +50,7 @@ db.connect()
 
 // Create TodoItem Table IF NOT EXISTS 
 
-db.connect() 
-    .then( (obj) => { 
-        obj.query( 
+db.any(
             `CREATE TABLE IF NOT EXISTS TodoItems ( 
                 id uuid, 
                 item_name TEXT NOT NULL,
@@ -60,6 +58,6 @@ db.connect()
                 PRIMARY KEY (id)
             )`
         )
-    })
+    ;
 
 module.exports = db;
