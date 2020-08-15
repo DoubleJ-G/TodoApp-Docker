@@ -30,7 +30,6 @@ export default {
 	name: 'app',
 	data: function() { 
 		return { 
-			url: 'http://localhost:3000/v1/items/',
 			item_name: '',
 			items: [],
 			notification: {
@@ -38,6 +37,11 @@ export default {
 				message: "Test notification",
 				type: "alert-success"
 			}
+		}
+	},
+	computed: { 
+		url() { 
+			return window.location.protocol + "//" + window.location.hostname + ":3000/v1/items/";
 		}
 	},
 	methods: { 
